@@ -2,13 +2,13 @@ import face_recognition as fr
 from shutil import copyfile as c
 
 # Create an encoding of facial features that can be compared to other faces
-picture_of_me = fr.load_image_file("/home/deeplearning/Downloads/Known/Joe Lynch")
+picture_of_me = fr.load_image_file("path/to/folder")
 my_face_encoding = fr.face_encodings(picture_of_me)[0]
 
 # Iterate through all the pictures
 for x in range(1, 304):
     # Construct the picture name and print it
-    file_name = "/home/deeplearning/PycharmProjects/MessingAround/pic/1 (" + str(x) + ")" + ".jpg"
+    file_name = "folder/path/ (" + str(x) + ")" + ".jpg"
     print(file_name)
 
     # Load this picture
@@ -24,4 +24,4 @@ for x in range(1, 304):
 
         # Save the image to a seperate folder if there is a match
         if results[0] == True:
-            c(file_name, "/home/deeplearning/PycharmProjects/MessingAround/Joe Lynch/" + end_name)
+            c(file_name, "path/to/folder" + end_name)
